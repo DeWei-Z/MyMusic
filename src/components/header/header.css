@@ -1,0 +1,21 @@
+.header-nav{
+    height: 30px;
+    width: 393.75px;
+    display: flex;
+   
+   
+}
+
+.live{
+    flex: 1;
+}
+
+.header-mid{
+    flex:5;
+    display: flex;
+    justify-content: space-around;
+}
+
+.search{
+    flex: 1;
+}

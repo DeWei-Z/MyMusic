@@ -1,13 +1,22 @@
+import React from 'react';
 import './App.css';
+import Play from './components/play/play';
+import Header from './components/header/header';
+import Footer from './components/footer/footer'
 
-function App() {
+const App = () => {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className='app'>
+       <Play/>
+       <Header/>
+       <Footer/>
        
-      </header>
     </div>
-  );
-}
+  )
+  }
+  
+ 
+
 
 export default App;
