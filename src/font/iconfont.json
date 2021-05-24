@@ -1,0 +1,23 @@
+{
+  "id": "2567533",
+  "name": "tiktok",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "488481",
+      "name": "add",
+      "font_class": "weibiaoti1",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "7685256",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e731",
+      "unicode_decimal": 59185
+    }
+  ]
+}

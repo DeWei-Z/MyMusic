@@ -10,7 +10,7 @@ import './play.css';
         })
   return (
     <>
-      <video ref={myref}  src={require('./meinv.mp4').default} 
+      <video ref={myref}  src={require('./video2.mp4').default} 
       controls autoPlay={true} muted className='play'>
       </video>
      

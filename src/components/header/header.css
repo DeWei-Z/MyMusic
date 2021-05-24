@@ -1,21 +1,48 @@
 .header-nav{
-    height: 30px;
+    height: 40px;
     width: 393.75px;
     display: flex;
-   
+   padding-top: 8px;
+   font-size: medium;
    
 }
 
 .live{
     flex: 1;
+    color: rgba(220, 220, 220, 0.8);
+    font-weight: bold;
+  
+    text-align: center;
 }
 
 .header-mid{
     flex:5;
     display: flex;
     justify-content: space-around;
+    font-weight: bold;
+    
+}
+
+.header-mid a{
+    color: rgba(220, 220, 220, 0.8);
+   
+}
+
+.header-mid a:hover{
+    color: rgba(255, 255, 255, 1);
+    border-bottom: white solid 2px;
 }
 
 .search{
     flex: 1;
+    color: rgba(220, 220, 220, 0.8);
+    
+    text-align: center;
 }
+
+.search a:hover{
+    color: rgba(255, 255, 255, 1);
+   
+}
+
+

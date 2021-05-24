@@ -1,4 +1,6 @@
 import './footer.css'
+import '../../font/iconfont.css'
+import Login from './login/login'
 
 const Footer=()=>{
 
@@ -6,9 +8,10 @@ const Footer=()=>{
         <div className="footer-nav">
             <a href='www.baidu.com'>首页</a>
             <a href='www.baidu.com'>朋友</a>
-            <button>+</button>
+            <span class="iconfont">&#xe627;</span>
             <a href='www.baidu.com'>消息</a>
-            <a href='www.baidu.com'>我</a>
+           
+            <Login/>
         </div>
     )
 }
