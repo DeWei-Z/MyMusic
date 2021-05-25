@@ -8,7 +8,7 @@ const Footer=()=>{
         <div className="footer-nav">
             <a href='www.baidu.com'>首页</a>
             <a href='www.baidu.com'>朋友</a>
-            <span class="iconfont">&#xe627;</span>
+            <span className="iconfont">&#xe627;</span>
             <a href='www.baidu.com'>消息</a>
            
             <Login/>
