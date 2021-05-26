@@ -4,16 +4,22 @@ import './play.css';
 
  const Play= () => {
         const myref=useRef()
+
         useEffect(()=>{
-        
-        myref.current.play()
+              myref.current.play()
         })
+
+        const next=()=>{
+          myref.current.src='/video?user=zdw'
+       
+          console.log('haha')
+        }
   return (
     <>
-      <video ref={myref}  src={require('./video2.mp4').default} 
-      controls autoPlay={true} muted className='play'>
+      <video ref={myref}  src='/video'
+       autoPlay={true} muted className='play' >
       </video>
-     
+      <button onClick={next}  >换曲</button>
     </>
     )
   }
