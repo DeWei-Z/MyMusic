@@ -1,0 +1,16 @@
+.arrow{
+    display: block;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 40px;
+    background-color:transparent;
+    z-index: 999;
+    color: rgba(220, 220, 220, 0.5);
+    text-align: center;
+}
+
+.arrow:hover{
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+}

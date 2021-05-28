@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2567533 */
-  src: url('iconfont.woff2?t=1621841028338') format('woff2'),
-       url('iconfont.woff?t=1621841028338') format('woff'),
-       url('iconfont.ttf?t=1621841028338') format('truetype');
+  src: url('iconfont.woff2?t=1622196870901') format('woff2'),
+       url('iconfont.woff?t=1622196870901') format('woff'),
+       url('iconfont.ttf?t=1622196870901') format('truetype');
 }
 
 .iconfont {
@@ -17,7 +17,17 @@
   color: rgba(255, 255, 255, 1);
 }
 
+.icon-left-arrow-outline:before {
+  content: "\e7b5";
+}
 
+.icon-right-arrow-outline:before {
+  content: "\e804";
+}
+
+.icon-heart:before {
+  content: "\e7b2";
+}
 
 .icon-weibiaoti1:before {
   content: "\e627";

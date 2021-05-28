@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "5127387",
+      "name": "left-arrow-outline",
+      "font_class": "left-arrow-outline",
+      "unicode": "e7b5",
+      "unicode_decimal": 59317
+    },
+    {
+      "icon_id": "5127489",
+      "name": "right-arrow-outline",
+      "font_class": "right-arrow-outline",
+      "unicode": "e804",
+      "unicode_decimal": 59396
+    },
+    {
+      "icon_id": "20284841",
+      "name": "heart",
+      "font_class": "heart",
+      "unicode": "e7b2",
+      "unicode_decimal": 59314
+    },
+    {
       "icon_id": "488481",
       "name": "add",
       "font_class": "weibiaoti1",

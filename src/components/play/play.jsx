@@ -2,24 +2,19 @@ import React,{useRef,useEffect} from 'react';
 import '../../../node_modules/antd/dist/antd.css';
 import './play.css';
 
- const Play= () => {
+ const Play= (props) => {
         const myref=useRef()
-
+      
         useEffect(()=>{
               myref.current.play()
-        })
+        },[props.src])
 
-        const next=()=>{
-          myref.current.src='/video?user=zdw'
        
-          console.log('haha')
-        }
   return (
     <>
-      <video ref={myref}  src='/video'
+      <video ref={myref}  src={props.src}
        autoPlay={true} muted className='play' >
       </video>
-      <button onClick={next}  >换曲</button>
     </>
     )
   }

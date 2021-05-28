@@ -1,0 +1,21 @@
+.left{
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    height: 100px;
+    width: 200px;
+    margin-top:520px ;
+    display: inline-block;
+    background-color: blanchedalmond;
+}
+
+.master{
+    background-color: blue;
+    display: block;
+}
+
+.text{
+    background-color: blueviolet;
+    display: block;
+}
+

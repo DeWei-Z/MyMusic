@@ -32,6 +32,7 @@ const Login = () => {
           },
         }}
         onFinish={onFinish}
+        width='450px'
       >
         <ProFormText width="md" name="username" label="用户名" placeholder="请输入名称"
         rules={[
@@ -54,7 +55,18 @@ const Login = () => {
           }
         ]}/>
 
-        <ProFormText width="md" name="password" label="密码" placeholder="请输入密码" />
+        <ProFormText width="md" name="password" label="密码" placeholder="请输入密码"
+        rules={[
+          {
+            whitespace:false,
+            required: true,
+            message: '用户名不能为空',
+          },
+          {
+              min:4,
+              message:'密码不能小于4位'
+          }
+        ]} />
       </ModalForm>
     
     </>
