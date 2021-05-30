@@ -8,6 +8,7 @@ const Change=(props)=>{
 
     useEffect(()=>{
           props.changeSrc(`/video?num=${count}`)
+          props.changeCount(count)
         },[count,props])
 
     const next=()=>{

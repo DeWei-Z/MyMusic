@@ -1,21 +1,39 @@
 .left{
     position: absolute;
     display: flex;
-    align-items: flex-end;
     height: 100px;
-    width: 200px;
+    width: 250px;
     margin-top:520px ;
     display: inline-block;
-    background-color: blanchedalmond;
+    background-color: transparent;
+}
+
+.flex-content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: transparent;
 }
 
 .master{
-    background-color: blue;
+    background-color: transparent;
     display: block;
+    order: 2;
+    font-size: large;
+    font-weight: bold;
+    color: white;
 }
 
 .text{
-    background-color: blueviolet;
+    background-color:transparent;
     display: block;
+    order: 1;
+    margin: 0;
+    color: white;
 }
 

@@ -1,12 +1,14 @@
-import './left.css'
+import './left.css';
 
 
-const Left=()=>{
-
+const Left=(props)=>{
+    
     return (
         <div className="left">
-            <a href='www.baidu.com' className='master'>@</a>
-            <p className='text'>今天天气真不错</p>
+            <div className="flex-content">
+            <a href='www.baidu.com' className='master'>@{props.video.master}</a>
+            <p className='text'>今天天气真不错今</p>
+            </div>
         </div>
     )
 }

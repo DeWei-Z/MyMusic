@@ -24,7 +24,6 @@
 }
 
 .footer-nav span{
-   
     width: 45px;
     font-size: 25px;
     height: 35px;
@@ -33,6 +32,11 @@
     border: white solid 3px;
     border-radius: 5px;
     line-height: 30px;
+}
+
+.footer-nav span:hover{
+    cursor: pointer;
+    background-color: rgba(220, 220,220, 0.5);
 }
 
 
