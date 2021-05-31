@@ -20,8 +20,6 @@ const Login = () => {
 
   return (
     <>
-    
-    
       <ModalForm
         title="Basic Modal"
         trigger={ <button  className='login-button'>登录</button>}

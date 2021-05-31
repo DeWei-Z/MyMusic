@@ -1,5 +1,5 @@
 import './footer.css'
-import '../../font/iconfont.css'
+import Upload from '../upload/upload'
 import Login from './login/login'
 
 const Footer=()=>{
@@ -8,7 +8,7 @@ const Footer=()=>{
         <div className="footer-nav">
             <a href='www.baidu.com'>首页</a>
             <a href='www.baidu.com'>朋友</a>
-            <span className="iconfont">&#xe627;</span>
+            <Upload/>
             <a href='www.baidu.com'>消息</a>
            
             <Login/>
