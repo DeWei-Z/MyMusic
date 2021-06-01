@@ -1,38 +1,61 @@
 import React, { useState } from 'react';
-import {Modal, Form, Upload, Button} from 'antd';
+import {Modal, Form, Upload, Button,Input,message} from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import '../../font/iconfont.css';
 import FormItem from 'antd/lib/form/FormItem';
+import reqwest from 'reqwest';
 
 
 
 const UploadV=()=>{
-
+    
     const [form] = Form.useForm();
     const [visible, setVisible] = useState(false);
-
-
+    const [fileList,setFileList]=useState([])
+    
     const onFinish=async (values)=>{
              console.log(values);
       }
+
+    const handleUpload = () => {
+      
+        const formData = new FormData();
+       console.log(fileList[0])
+        formData.append('file',fileList[0]);
+       
+        reqwest({
+          url: '/upload',
+          method: 'post',
+          processData: false,
+          data: formData,
+          success: () => {
+            setFileList([])
+            message.success('upload successfully.');
+          },
+          error: () => {
+            message.error('upload failed.');
+          },
+        });
+      };
 
     const  onCancel=() => {
         setVisible(false);
       }
 
       const props = {
-        action: '/upload',
-        listType: 'picture',
-        previewFile(file) {
-          console.log('Your upload file:', file);
-          // Your process logic. Here we just mock to the same file
-          return fetch('/video/desc', {
-            method: 'POST',
-            body: file,
-          })
-            .then(res => res.json())
-            .then(({ thumbnail }) => thumbnail);
+        name:'file',
+        onRemove: () => {
+          setFileList(() => {
+            const newFileList = fileList.slice();
+            newFileList.splice(0, 1);
+            return newFileList;
+          });
         },
+        beforeUpload: file => {
+          setFileList([file]);
+          return false;
+        },
+        fileList,
       };
 
     return (
@@ -44,16 +67,18 @@ const UploadV=()=>{
       okText="确认"
       cancelText="取消"
       onCancel={onCancel}
+      width='500px'
       onOk={() => {
-        form
-          .validateFields()
-          .then((values) => {
-            form.resetFields();
-            onFinish(values);
-          })
-          .catch((info) => {
-            console.log('Validate Failed:', info);
-          });
+        handleUpload()
+        form.validateFields()
+                .then((values) => {
+                  form.resetFields();
+                  onFinish(values);
+                 
+                })
+                .catch((info) => {
+                  console.log('Validate Failed:', info);
+                });
       }}
     >
       <Form
@@ -65,13 +90,13 @@ const UploadV=()=>{
         }}
       >
        
-        <Form.Item name="description" label="Description">
-          <textarea cols={30} rows={4} />
+        <Form.Item name="description" label="视频描述">
+            <Input.TextArea></Input.TextArea>
         </Form.Item>
 
-        <FormItem name='file' >
+        <FormItem name='file'  >
           <Upload {...props}>
-              <Button icon={<UploadOutlined />}>Upload</Button>
+              <Button icon={<UploadOutlined />} style={{marginLeft:'350px'}} >Upload</Button>
           </Upload>
         </FormItem>
         
