@@ -3,7 +3,8 @@ import {Modal, Form, Upload, Button,Input,message} from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import '../../font/iconfont.css';
 import FormItem from 'antd/lib/form/FormItem';
-import reqwest from 'reqwest';
+import axios from 'axios'
+
 
 
 
@@ -13,29 +14,35 @@ const UploadV=()=>{
     const [visible, setVisible] = useState(false);
     const [fileList,setFileList]=useState([])
     
-    const onFinish=async (values)=>{
-             console.log(values);
-      }
-
-    const handleUpload = () => {
+    const handleUpload = async(values) => {
       
         const formData = new FormData();
-       console.log(fileList[0])
         formData.append('file',fileList[0]);
-       
-        reqwest({
-          url: '/upload',
-          method: 'post',
-          processData: false,
-          data: formData,
-          success: () => {
-            setFileList([])
-            message.success('upload successfully.');
+        formData.append('desc',values.description)
+        
+        axios({
+          url:'/upload',
+          method:"POST",
+          data:formData,
+          headers:{
+            'Content-Type': 'multipart/form-data',
+            'X-Requested-With': 'XMLHttpRequest'
           },
-          error: () => {
-            message.error('upload failed.');
-          },
-        });
+          processData:false,
+          contentType:false,
+
+        }).then(res => {
+            if(res.data.status===1){
+              message.error('上传文件失败');
+            }else{
+              message.success('上传文件成功')
+              setFileList([])
+              const desc=res.data.desc
+            }
+          })
+          .catch(err => {
+              console.log(err)
+          })
       };
 
     const  onCancel=() => {
@@ -69,12 +76,11 @@ const UploadV=()=>{
       onCancel={onCancel}
       width='500px'
       onOk={() => {
-        handleUpload()
+       
         form.validateFields()
                 .then((values) => {
+                  handleUpload(values)
                   form.resetFields();
-                  onFinish(values);
-                 
                 })
                 .catch((info) => {
                   console.log('Validate Failed:', info);
