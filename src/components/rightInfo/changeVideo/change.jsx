@@ -7,7 +7,7 @@ const Change=(props)=>{
     let [count,setCount]=useState(1)
 
     useEffect(()=>{
-          props.changeSrc(`/video?num=${count}`)
+          props.changeSrc(`/upload/admin${count}.mp4`)
           props.changeCount(count)
         },[count,props])
 

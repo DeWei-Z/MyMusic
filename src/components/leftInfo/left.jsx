@@ -7,7 +7,7 @@ const Left=(props)=>{
         <div className="left">
             <div className="flex-content">
             <a href='www.baidu.com' className='master'>@{props.video.master}</a>
-            <p className='text'>今天天气真不错今</p>
+            <p className='text'>{props.video.desc}</p>
             </div>
         </div>
     )

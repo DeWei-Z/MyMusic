@@ -2,7 +2,8 @@ import React from 'react';
 import { message } from 'antd';
 import { ModalForm, ProFormText } from '@ant-design/pro-form';
 import './login.css';
-import {reqLogin} from '../../../ajax/index'
+import {reqLogin} from '../../../ajax/index';
+import memory from '../../../memory'
 
 const Login = () => {
  
@@ -14,7 +15,13 @@ const Login = () => {
     if (response.status===0) { // 登陆成功
       
       message.success('登陆成功')
-      console.log(response.data)
+      memory.user=response.data
+      localStorage.setItem('user',JSON.stringify(response.data))
+      return true;
+
+    }else{
+      message.error('登录失败')
+      return false;
     }
   }
 

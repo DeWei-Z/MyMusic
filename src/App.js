@@ -8,9 +8,10 @@ import Left from './components/leftInfo/left';
 import {videoDesc} from './ajax/index'
 
 const App = () => {
-         let [src,setSrc]=useState('/video?num=1')
+         let [src,setSrc]=useState('/upload/admin1.mp4')
          let [video,setVideo]=useState({})
          let [count,setCount]=useState(1)
+
          const asyncResult=async()=>{
                   const result=await videoDesc(count)
                   setVideo(result)
