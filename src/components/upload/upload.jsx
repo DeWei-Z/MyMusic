@@ -69,7 +69,6 @@ const UploadV=()=>{
     
       useEffect(() => {
         if(inputVisible){
-          console.log(saveInputRef)
           saveInputRef.current.focus()
         }
           
@@ -115,7 +114,12 @@ const UploadV=()=>{
 
     return (
         <>
-        <span className="iconfont" onClick={()=>{setVisible(true)} } >&#xe627;</span>
+        <span className="iconfont" onClick={()=>{
+          if(!memory.user.username){
+            message.error('请先登录')
+            return;
+          }
+          setVisible(true)} } >&#xe627;</span>
         <Modal
       visible={visible}
       title="Create a new collection"
@@ -127,12 +131,11 @@ const UploadV=()=>{
        
         form.validateFields()
                 .then((values) => {
-               
-                  handleUpload(values)
-                  form.resetFields();
+                    handleUpload(values)
+                    form.resetFields();
                 })
                 .catch((info) => {
-                  console.log('Validate Failed:', info);
+                    console.log('Validate Failed:', info);
                 });
       }}
     >
