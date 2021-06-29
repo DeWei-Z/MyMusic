@@ -5,6 +5,7 @@ import './login.css';
 import {reqLogin} from '../../../ajax/index';
 import memory from '../../../memory'
 
+
 const Login = () => {
  
   
@@ -16,6 +17,7 @@ const Login = () => {
       
       message.success('登陆成功')
       memory.user=response.data
+      console.log(memory.user)
       localStorage.setItem('user',JSON.stringify(response.data))
       return true;
 

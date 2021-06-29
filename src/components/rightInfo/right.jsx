@@ -7,8 +7,8 @@ const Right=(props)=>{
            
     return(
         <div className="right">
-            <Like/>
-            <Change changeSrc={props.changeSrc} changeCount={props.changeCount} />
+            <Like changeLike={props.changeLike} like={props.like} src={props.src} tag={props.tag} />
+            <Change changeSrc={props.changeSrc} changeCount={props.changeCount}  />
         </div>
     )
 }
