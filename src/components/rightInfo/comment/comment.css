@@ -1,0 +1,12 @@
+.countComment{
+    color: white;
+    text-align: center;
+    margin-top: -12px;
+  }
+
+.talk{
+    font-size: 30px;
+    color: rgba(220, 220, 220, 0.5);
+    cursor: pointer;
+}
+

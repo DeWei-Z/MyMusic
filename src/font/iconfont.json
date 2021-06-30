@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6992598",
+      "name": "当前会话",
+      "font_class": "dangqianhuihua",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
       "icon_id": "5127387",
       "name": "left-arrow-outline",
       "font_class": "left-arrow-outline",

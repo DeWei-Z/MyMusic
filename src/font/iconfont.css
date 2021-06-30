@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2567533 */
-  src: url('iconfont.woff2?t=1622196870901') format('woff2'),
-       url('iconfont.woff?t=1622196870901') format('woff'),
-       url('iconfont.ttf?t=1622196870901') format('truetype');
+  src: url('iconfont.woff2?t=1625043309378') format('woff2'),
+       url('iconfont.woff?t=1625043309378') format('woff'),
+       url('iconfont.ttf?t=1625043309378') format('truetype');
 }
 
 .iconfont {
@@ -15,6 +15,10 @@
 
 .iconfont:hover{
   color: rgba(255, 255, 255, 1);
+}
+
+.icon-dangqianhuihua:before {
+  content: "\e663";
 }
 
 .icon-left-arrow-outline:before {

@@ -1,7 +1,10 @@
+
+
 #heart {
  width: 30px;
  height: 30px;
 transform: rotate(45deg);
+margin-bottom: 2px;
 
 }
 
@@ -37,3 +40,6 @@ transform: rotate(45deg);
   cursor: pointer;
 }
 
+.countLike{
+  color: white;
+}

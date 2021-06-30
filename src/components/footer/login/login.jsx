@@ -6,7 +6,7 @@ import {reqLogin} from '../../../ajax/index';
 import memory from '../../../memory'
 
 
-const Login = () => {
+const Login = (props) => {
  
   
   const onFinish =async (values) => {
@@ -19,6 +19,7 @@ const Login = () => {
       memory.user=response.data
       console.log(memory.user)
       localStorage.setItem('user',JSON.stringify(response.data))
+      props.userLike()
       return true;
 
     }else{
@@ -42,7 +43,8 @@ const Login = () => {
         width='450px'
       >
         <ProFormText width="md" name="username" label="用户名" placeholder="请输入名称"
-        rules={[
+         validateTrigger='onBlur'
+         rules={[
           {
             whitespace:false,
             required: true,
@@ -63,7 +65,8 @@ const Login = () => {
         ]}/>
 
         <ProFormText width="md" name="password" label="密码" placeholder="请输入密码"
-        rules={[
+         validateTrigger='onBlur'
+         rules={[
           {
             whitespace:false,
             required: true,
